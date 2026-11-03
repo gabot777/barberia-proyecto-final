@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Barbería Inicial | Club de la Barba</title>
+  <link rel="icon" type="image/x-icon" href="./assets/image/favicon.ico">
+
+  <!-- Google Fonts: Inter, Barlow Condensed, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Compilado -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="club-editorial bg-secondary text-primary font-sans">
+
+  <!-- Saltar al contenido principal (accesibilidad) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-azul text-white px-4 py-2 rounded-md z-50">
+    Saltar al contenido principal
+  </a>
+
+  <!-- ======================================================================
+       HEADER / NAVEGACIÓN PRINCIPAL
+       ====================================================================== -->
+  <header>
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#111111f5] border-b border-white/10 backdrop-blur-md">
+      <div class="nav-glow-line"></div>
+      <div class="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-7">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="flex items-center nav-logo-link" aria-label="Inicio Club de la Barba">
+            <img src="./assets/image/logo.png" alt="Club de la Barba" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300">
+          </a>
+
+          <div class="hidden lg:flex min-w-0 flex-1 items-center justify-end gap-5 xl:gap-6">
+            <a href="index.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Inicio<span class="nav-link-underline"></span></a>
+            <a href="curso.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Curso<span class="nav-link-underline"></span></a>
+            <a href="tienda.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Tienda<span class="nav-link-underline"></span></a>
+
+            <!-- Servicios (dropdown) -->
+            <div class="relative group">
+              <button type="button" class="nav-link flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982] cursor-pointer">
+                Servicios
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute right-0 mt-2 w-64 nav-dropdown opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0">
+                <div class="p-2 space-y-1">
+                  <a href="servicios.html" class="block rounded-lg px-3 py-2.5 text-sm font-semibold text-[#c59d5f] hover:bg-white/5 transition-all duration-200">Todos los servicios</a>
+                  <a href="servicios.html#corte" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Corte de cabello</a>
+                  <a href="servicios.html#barba" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Barba</a>
+                  <a href="servicios.html#afeitado" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Afeitado clásico</a>
+                  <a href="servicios.html#visagismo" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Visagismo</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="barbero-a-domicilio.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Solicitar barbero a domicilio<span class="nav-link-underline"></span></a>
+            <a href="contacto.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Contacto<span class="nav-link-underline"></span></a>
+
+            <a href="index.html#agenda-online" class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#c59d5f] px-5 py-2.5 text-sm font-bold text-[#111111] transition-colors duration-300 hover:bg-[#e0bb7e]">Reservar</a>
+          </div>
+
+          <div class="lg:hidden flex items-center">
+            <button id="mobile-menu-button" type="button" class="p-2 -mr-2 text-white hover:text-[#c59d5f] transition-colors duration-300 rounded-lg cursor-pointer" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto bg-[#111111] border-t border-white/10">
+        <div class="px-3 pt-3 pb-5 space-y-1">
+          <a href="index.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Inicio</a>
+          <a href="curso.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Curso</a>
+          <a href="tienda.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Tienda</a>
+          <a href="servicios.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Servicios</a>
+          <a href="barbero-a-domicilio.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Solicitar barbero a domicilio</a>
+          <a href="contacto.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Contacto</a>
+          <a href="index.html#agenda-online" class="block px-3 py-2.5 text-base font-bold text-[#111111] bg-[#c59d5f] rounded-lg hover:bg-[#e0bb7e] transition-all duration-300">Reservar</a>
+
+          <div class="pt-3 border-t border-white/10 space-y-2">
+            <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-[#25d366]/25 bg-[#25d366]/10 px-3.5 py-3 text-white transition-all duration-300 hover:bg-[#25d366]/20"><span class="font-semibold text-sm">WhatsApp general</span><span class="text-xs text-white/70">Consultas y ayuda</span></a>
+            <h3 class="text-[#c59d5f] font-semibold pt-2 mb-1 text-xs uppercase tracking-[0.2em] px-1">Sucursales</h3>
+            <a href="https://wa.me/56930192051" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Bellas Artes</span></a>
+            <a href="https://wa.me/56933057683" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Providencia</span></a>
+            <a href="https://wa.me/56992660737" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Ñuñoa</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       CURSO DE BARBERÍA INICIAL
+       ====================================================================== -->
+  <main id="main-content" class="min-h-screen overflow-x-hidden bg-[#0b0a08] text-white selection:bg-accent selection:text-black">
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-36 lg:px-8">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(197,157,95,0.20),transparent_30%),linear-gradient(130deg,rgba(255,255,255,0.08),transparent_42%)]"></div>
+      <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent"></div>
+
+      <div class="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.18fr_0.82fr] lg:items-end">
+        <div class="min-w-0 max-w-[22rem] sm:max-w-none">
+          <p class="inline-flex max-w-full border border-accent/35 bg-accent/10 px-4 py-2 text-center text-[0.68rem] font-black uppercase tracking-[0.16em] text-accent sm:text-xs sm:tracking-[0.22em]">
+            Formación inicial para futuros barberos
+          </p>
+          <h1 class="mt-7 max-w-[22rem] font-display text-[clamp(3.1rem,12vw,7.8rem)] font-black uppercase leading-[0.86] tracking-normal text-white sm:max-w-4xl">
+            Curso de<br>
+            Barbería Inicial
+          </h1>
+          <p class="mt-7 max-w-[21rem] text-xl leading-8 text-white/78 sm:max-w-2xl md:text-2xl md:leading-9">
+            Aprende las bases reales del oficio dentro de una barbería en funcionamiento: técnica, criterio, práctica, protocolos y atención profesional desde el primer día.
+          </p>
+          <div class="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
+            <a href="https://wa.me/56967675584?text=Hola%2C%20quiero%20inscribirme%20en%20el%20Curso%20de%20Barber%C3%ADa%20Inicial.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20fechas%2C%20horarios%2C%20modalidad%20de%20pago%20y%20cupos%20disponibles." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-14 max-w-full box-border items-center justify-center rounded-xl bg-whatsapp px-7 py-4 text-center text-base font-black text-[#071109] transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0" aria-label="Consultar cupos del Curso de Barbería Inicial por WhatsApp al +56 9 6767 5584">
+              Consultar cupos<span class="hidden sm:inline">&nbsp;por WhatsApp</span>
+            </a>
+            <a href="#programa" class="inline-flex min-h-14 max-w-full box-border items-center justify-center rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-base font-bold text-white transition-colors duration-300 hover:bg-white hover:text-[#0b0a08]">
+              Ver programa
+            </a>
+          </div>
+          <p class="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-white/45">
+            Duración: 8 semanas
+          </p>
+        </div>
+
+        <aside class="min-w-0 max-w-[22rem] box-border border border-accent/24 bg-[#17120d]/85 p-6 shadow-[0_28px_70px_rgba(0,0,0,0.36)] sm:max-w-none md:p-8">
+          <div class="flex flex-col items-start justify-between gap-5 border-b border-white/10 pb-7 sm:flex-row sm:items-start">
+            <div>
+              <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Creado por</p>
+              <p class="mt-3 text-3xl font-black text-white">Club de la Barba</p>
+            </div>
+            <span class="shrink-0 border border-white/12 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white/55">Since 2017</span>
+          </div>
+          <dl class="divide-y divide-white/10">
+            <div class="grid gap-2 py-5 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
+              <dt class="text-sm font-bold text-white/45">Curso</dt>
+              <dd class="text-sm font-bold text-white">Curso de Barbería Inicial</dd>
+            </div>
+            <div class="grid gap-2 py-5 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
+              <dt class="text-sm font-bold text-white/45">Modalidad</dt>
+              <dd class="text-sm font-bold text-white">Teoría, demostración, práctica y observación de clientes reales</dd>
+            </div>
+            <div class="grid gap-2 py-5 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
+              <dt class="text-sm font-bold text-white/45">Lugar</dt>
+              <dd class="text-sm font-bold text-white">En barbería, durante horarios definidos para ver flujos reales</dd>
+            </div>
+            <div class="grid gap-2 py-5 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
+              <dt class="text-sm font-bold text-white/45">Valor</dt>
+              <dd class="text-sm font-bold text-white">$250.000</dd>
+            </div>
+            <div class="grid gap-2 py-5 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
+              <dt class="text-sm font-bold text-white/45">Pagos</dt>
+              <dd class="text-sm font-bold text-white">Modalidad de pago disponible al consultar</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Una entrada seria -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Una entrada seria al mundo de la barbería</p>
+          <h2 class="mt-4 max-w-xl font-display text-4xl font-black leading-tight text-white md:text-5xl">Primero observar, entender el flujo real y construir base.</h2>
+        </div>
+        <div class="grid gap-8 md:grid-cols-2">
+          <article class="border-t border-accent/40 pt-6">
+            <h3 class="text-2xl font-black text-white">Para quién es</h3>
+            <p class="mt-4 text-base leading-8 text-white/68">Personas que quieren iniciarse en barbería desde cero, aprender fundamentos técnicos y entender cómo funciona una atención profesional en una barbería real.</p>
+          </article>
+          <article class="border-t border-accent/40 pt-6">
+            <h3 class="text-2xl font-black text-white">Qué lo hace distinto</h3>
+            <p class="mt-4 text-base leading-8 text-white/68">No se queda solo en nombres de cortes. Se realiza en la barbería para ver protocolos reales, casos reales y a tu profesor atendiendo clientes reales.</p>
+          </article>
+        </div>
+      </div>
+      <div class="mx-auto mt-14 grid max-w-7xl gap-4 md:grid-cols-4">
+        <div class="border-l border-white/12 pl-5">
+          <p class="text-lg font-black text-accent">Criterio técnico</p>
+          <p class="mt-2 text-sm leading-6 text-white/58">No solo ganas de pasar máquina.</p>
+        </div>
+        <div class="border-l border-white/12 pl-5">
+          <p class="text-lg font-black text-accent">Higiene y orden</p>
+          <p class="mt-2 text-sm leading-6 text-white/58">Base limpia de protocolos y herramientas.</p>
+        </div>
+        <div class="border-l border-white/12 pl-5">
+          <p class="text-lg font-black text-accent">Mirada profesional</p>
+          <p class="mt-2 text-sm leading-6 text-white/58">Rostro, cabello y estilo antes de decidir.</p>
+        </div>
+        <div class="border-l border-white/12 pl-5">
+          <p class="text-lg font-black text-accent">Práctica guiada</p>
+          <p class="mt-2 text-sm leading-6 text-white/58">Primeras habilidades en fades, tijera y barba.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aprendizaje en barbería real -->
+    <section class="border-y border-white/10 bg-[#15110c] px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr]">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Aprendizaje en barbería real</p>
+          <h2 class="mt-4 max-w-2xl font-display text-4xl font-black leading-tight text-white md:text-5xl">No es una sala aislada: es aprender mirando cómo se trabaja de verdad.</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-white/68">Parte del valor del curso es vivirlo en la barbería, en horarios definidos para convivir con la operación real. Vas a entender el oficio desde el flujo completo: preparación, recepción, asesoría, servicio, higiene, tiempos y experiencia del cliente.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <h3 class="text-xl font-black text-accent">Clientes reales</h3>
+            <p class="mt-3 text-sm leading-7 text-white/66">Vas a observar a tu profesor atender clientes reales: diagnóstico, conversación, ejecución, tiempos y cierre de la experiencia.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <h3 class="text-xl font-black text-accent">Flujo de barbería</h3>
+            <p class="mt-3 text-sm leading-7 text-white/66">El curso se vive dentro de la operación del Club para entender cómo se prepara el puesto, cómo se recibe a un cliente y cómo se sostiene el ritmo de trabajo.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <h3 class="text-xl font-black text-accent">Protocolos reales</h3>
+            <p class="mt-3 text-sm leading-7 text-white/66">Higiene, orden, herramientas, productos, trato y cuidado del detalle se muestran en contexto real, no como teoría aislada.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <h3 class="text-xl font-black text-accent">Casos reales</h3>
+            <p class="mt-3 text-sm leading-7 text-white/66">Verás cómo cambian las decisiones según rostro, cabello, barba, estilo, expectativa del cliente y condiciones del servicio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programa -->
+    <section id="programa" class="border-y border-white/10 bg-[#f3eee5] px-4 py-16 text-[#15110c] sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#8c6431]">Programa del curso</p>
+            <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">8 módulos, 8 semanas.</h2>
+            <p class="mt-5 text-lg leading-8 text-[#5f564a]">Cada módulo combina teoría aplicada, demostración, análisis y ejercicios para que el aprendizaje tenga sentido práctico.</p>
+          </div>
+          <div class="grid gap-x-8 gap-y-0 md:grid-cols-2">
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">01</span>
+              <div><h3 class="text-xl font-black">Fundamentos de barbería</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Historia, rol del barbero moderno, higiene profesional, organización del espacio y experiencia del cliente.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">02</span>
+              <div><h3 class="text-xl font-black">Herramientas profesionales</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Máquina, motores, peines guía, trimmer, tijeras, navaja, limpieza y mantenimiento.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">03</span>
+              <div><h3 class="text-xl font-black">Tipos de cortes</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Cortes clásicos, modernos, fades y adaptación según tipo de cabello.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">04</span>
+              <div><h3 class="text-xl font-black">Productos de barbería</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Pomadas, ceras, arcillas, sprays, pre-stylers, protectores térmicos y productos para barba.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">05</span>
+              <div><h3 class="text-xl font-black">Visagismo</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Tipos de rostro, equilibrio visual y asesoría de imagen para recomendar cortes con criterio.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">06</span>
+              <div><h3 class="text-xl font-black">Técnicas de degradado</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Transiciones, uso de palanca, low fade, mid fade, high fade y errores comunes.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">07</span>
+              <div><h3 class="text-xl font-black">Corte con tijera</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Corte sobre peine, point cut, texturizado y control de volumen.</p></div>
+            </article>
+            <article class="grid grid-cols-[3.25rem_1fr] gap-5 border-t border-[#15110c]/15 py-6">
+              <span class="font-display text-3xl font-black leading-none text-[#a7793d]">08</span>
+              <div><h3 class="text-xl font-black">Diseño de barba</h3><p class="mt-2 text-sm leading-6 text-[#5f564a]">Tipos de barba, contornos, navaja, perfilado, cuidado y productos.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué vas a aprender -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Qué vas a aprender en la práctica</p>
+          <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Aprender a mirar, decidir y ejecutar con intención.</h2>
+        </div>
+        <div class="mt-12 divide-y divide-white/10 border-y border-white/10">
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Higiene y atención</h3>
+            <p class="text-base leading-8 text-white/68">Preparar el puesto, desinfectar herramientas, ordenar el flujo de trabajo y simular una atención completa a un cliente.</p>
+          </article>
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Herramientas</h3>
+            <p class="text-base leading-8 text-white/68">Reconocer funciones, numeraciones, peines guía, trimmer, tijeras y navaja. Montaje, desmontaje, uso y limpieza correcta.</p>
+          </article>
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Cortes masculinos</h3>
+            <p class="text-base leading-8 text-white/68">Entender diferencias entre cortes clásicos, modernos y degradados. Leer el tipo de cabello antes de ejecutar.</p>
+          </article>
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Fade</h3>
+            <p class="text-base leading-8 text-white/68">Construir transiciones limpias, usar la palanca con intención y detectar errores comunes para corregirlos.</p>
+          </article>
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Tijera</h3>
+            <p class="text-base leading-8 text-white/68">Practicar corte sobre peine, point cut, texturizado y control de volumen para resultados más naturales.</p>
+          </article>
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Visagismo</h3>
+            <p class="text-base leading-8 text-white/68">Analizar rostros ovalados, redondos, cuadrados y rectangulares para recomendar estilos con equilibrio visual.</p>
+          </article>
+          <article class="grid gap-4 py-6 md:grid-cols-[0.34fr_0.66fr] md:py-8">
+            <h3 class="text-xl font-black text-accent">Barba</h3>
+            <p class="text-base leading-8 text-white/68">Diseñar contornos, perfilar con navaja y adaptar la barba al rostro y estilo del cliente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estructura recomendada -->
+    <section class="bg-[#15110c] px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.2fr]">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Estructura recomendada</p>
+          <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Una ruta progresiva para avanzar desde la base.</h2>
+          <p class="mt-5 text-lg leading-8 text-white/68">El curso se desarrolla durante 8 semanas, con una progresión diseñada para aprender, practicar, corregir e integrar cada técnica.</p>
+        </div>
+        <div class="space-y-3">
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 1</p>
+            <h3 class="text-lg font-black text-white">Fundamentos y herramientas</h3>
+            <p class="text-sm leading-6 text-white/62">Higiene, rol profesional, herramientas, orden del puesto y primeros ejercicios.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 2</p>
+            <h3 class="text-lg font-black text-white">Cortes clásicos</h3>
+            <p class="text-sm leading-6 text-white/62">Estructuras base, estilos clásicos y adaptación al tipo de cabello.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 3</p>
+            <h3 class="text-lg font-black text-white">Degradados</h3>
+            <p class="text-sm leading-6 text-white/62">Low, mid, high fade, uso de palanca, transiciones y corrección de errores.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 4</p>
+            <h3 class="text-lg font-black text-white">Corte con tijera</h3>
+            <p class="text-sm leading-6 text-white/62">Corte sobre peine, texturizado, volumen y terminaciones más naturales.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 5</p>
+            <h3 class="text-lg font-black text-white">Visagismo</h3>
+            <p class="text-sm leading-6 text-white/62">Análisis de rostro, equilibrio visual y recomendación de corte al cliente.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 6</p>
+            <h3 class="text-lg font-black text-white">Diseño de barba</h3>
+            <p class="text-sm leading-6 text-white/62">Diseño de barba, contornos, perfilado y adaptación al rostro del cliente.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 7</p>
+            <h3 class="text-lg font-black text-white">Práctica guiada</h3>
+            <p class="text-sm leading-6 text-white/62">Aplicación de las técnicas aprendidas, revisión del proceso y corrección de errores.</p>
+          </article>
+          <article class="grid gap-3 border border-white/10 bg-white/[0.035] p-5 md:grid-cols-[7rem_0.85fr_1.15fr] md:items-start">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">Semana 8</p>
+            <h3 class="text-lg font-black text-white">Integración y cierre</h3>
+            <p class="text-sm leading-6 text-white/62">Práctica final, refuerzo técnico y evaluación integral de lo aprendido.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodología -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Metodología de aprendizaje</p>
+          <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Primero se entiende el por qué, luego se observa el trabajo real y finalmente se practica.</h2>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">01</p>
+            <h3 class="mt-4 text-2xl font-black text-white">Base técnica</h3>
+            <p class="mt-3 text-sm leading-7 text-white/64">Conceptos, herramientas, higiene, estructura de cortes y fundamentos visuales.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">02</p>
+            <h3 class="mt-4 text-2xl font-black text-white">Demostración</h3>
+            <p class="mt-3 text-sm leading-7 text-white/64">Explicación paso a paso de cómo se ejecuta una técnica y qué errores evitar.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">03</p>
+            <h3 class="mt-4 text-2xl font-black text-white">Práctica guiada</h3>
+            <p class="mt-3 text-sm leading-7 text-white/64">Ejercicios concretos para desarrollar mano, control, criterio y seguridad.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">04</p>
+            <h3 class="mt-4 text-2xl font-black text-white">Corrección</h3>
+            <p class="mt-3 text-sm leading-7 text-white/64">Análisis de errores para mejorar técnica, postura, transiciones y terminaciones.</p>
+          </article>
+          <article class="border border-white/10 bg-white/[0.04] p-6 sm:col-span-2">
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-accent">05</p>
+            <h3 class="mt-4 text-2xl font-black text-white">Asesoría</h3>
+            <p class="mt-3 text-sm leading-7 text-white/64">Cómo mirar el rostro, el cabello, la barba y el estilo del cliente antes de recomendar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por qué tomar este curso -->
+    <section class="border-y border-white/10 bg-[#f3eee5] px-4 py-16 text-[#15110c] sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-[#8c6431]">Por qué tomar este curso</p>
+          <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Partir mal en barbería sale caro.</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-[#5f564a]">Malos hábitos, poca higiene, cortes sin estructura y frustración. El curso está pensado para construir la base correcta desde el principio.</p>
+          <div class="mt-10 grid gap-6 md:grid-cols-2">
+            <div class="border-t border-[#15110c]/15 pt-5">
+              <h3 class="text-xl font-black">Aprendes desde la base</h3>
+              <p class="mt-3 text-sm leading-6 text-[#5f564a]">No necesitas experiencia previa. El curso parte desde fundamentos y avanza hacia técnicas esenciales del oficio.</p>
+            </div>
+            <div class="border-t border-[#15110c]/15 pt-5">
+              <h3 class="text-xl font-black">Formación con mirada real</h3>
+              <p class="mt-3 text-sm leading-6 text-[#5f564a]">La barbería se aprende viendo técnica, protocolos, ritmo y atención real; no solo mirando videos sueltos.</p>
+            </div>
+            <div class="border-t border-[#15110c]/15 pt-5">
+              <h3 class="text-xl font-black">Contenido aplicable</h3>
+              <p class="mt-3 text-sm leading-6 text-[#5f564a]">Todo el programa apunta a situaciones reales: cliente, herramienta, rostro, corte, barba, producto y resultado.</p>
+            </div>
+            <div class="border-t border-[#15110c]/15 pt-5">
+              <h3 class="text-xl font-black">Ruta clara para mejorar</h3>
+              <p class="mt-3 text-sm leading-6 text-[#5f564a]">Terminas con una estructura para seguir practicando, corrigiendo y desarrollando tu camino como barbero.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="bg-[#15110c] p-7 text-white md:p-8">
+          <h3 class="text-3xl font-black">Ideal para ti si...</h3>
+          <ul class="mt-7 space-y-5">
+            <li class="border-l border-accent/50 pl-4 text-base leading-7 text-white/72">Quieres empezar en barbería y no sabes por dónde partir.</li>
+            <li class="border-l border-accent/50 pl-4 text-base leading-7 text-white/72">Ya has practicado, pero necesitas ordenar técnica y fundamentos.</li>
+            <li class="border-l border-accent/50 pl-4 text-base leading-7 text-white/72">Quieres aprender a asesorar, no solo a copiar cortes.</li>
+            <li class="border-l border-accent/50 pl-4 text-base leading-7 text-white/72">Buscas una formación inicial con estética, disciplina y práctica real.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Inscripción y contacto -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 border border-accent/25 bg-[#17120d] p-6 md:p-10 lg:grid-cols-[1fr_0.8fr]">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Inscripción y contacto</p>
+          <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Valor del curso: $250.000.</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-white/68">Escríbenos para recibir fechas disponibles, modalidad de pago, horarios en barbería y cupos. Cupos limitados para mantener una formación más cercana y práctica.</p>
+        </div>
+        <div class="flex flex-col justify-end gap-3">
+          <a href="https://wa.me/56967675584?text=Hola%2C%20quiero%20inscribirme%20en%20el%20Curso%20de%20Barber%C3%ADa%20Inicial.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20fechas%2C%20horarios%2C%20modalidad%20de%20pago%20y%20cupos%20disponibles." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-14 box-border items-center justify-center rounded-xl bg-whatsapp px-7 py-4 text-base font-black text-[#071109] transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0" aria-label="Consultar por WhatsApp al +56 9 6767 5584">
+            WhatsApp principal: +56 9 6767 5584
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/56967675584" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Escribir por WhatsApp al +56 9 6767 5584">
+    <span class="floating-whatsapp__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+      </svg>
+    </span>
+  </a>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
