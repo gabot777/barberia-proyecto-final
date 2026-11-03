@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios | Club de la Barba</title>
+  <link rel="icon" type="image/x-icon" href="./assets/image/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="club-editorial bg-secondary text-primary font-sans">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-azul text-white px-4 py-2 rounded-md z-50">Saltar al contenido principal</a>
+
+  <!-- ===== HEADER / NAVEGACIÓN ===== -->
+  <header>
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#111111f5] border-b border-white/10 backdrop-blur-md">
+      <div class="nav-glow-line"></div>
+      <div class="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-7">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="flex items-center nav-logo-link" aria-label="Inicio Club de la Barba">
+            <img src="./assets/image/logo.png" alt="Club de la Barba" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300">
+          </a>
+
+          <div class="hidden lg:flex min-w-0 flex-1 items-center justify-end gap-5 xl:gap-6">
+            <a href="index.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Inicio<span class="nav-link-underline"></span></a>
+            <a href="curso.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Curso<span class="nav-link-underline"></span></a>
+            <a href="tienda.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Tienda<span class="nav-link-underline"></span></a>
+
+            <!-- Servicios (dropdown) -->
+            <div class="relative group">
+              <button type="button" class="nav-link flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982] cursor-pointer">
+                Servicios
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute right-0 mt-2 w-64 nav-dropdown opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0">
+                <div class="p-2 space-y-1">
+                  <a href="servicios.html" class="block rounded-lg px-3 py-2.5 text-sm font-semibold text-[#c59d5f] hover:bg-white/5 transition-all duration-200">Todos los servicios</a>
+                  <a href="servicios.html#corte" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Corte de cabello</a>
+                  <a href="servicios.html#barba" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Barba</a>
+                  <a href="servicios.html#afeitado" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Afeitado clásico</a>
+                  <a href="servicios.html#visagismo" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Visagismo</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="barbero-a-domicilio.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Solicitar barbero a domicilio<span class="nav-link-underline"></span></a>
+            <a href="contacto.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Contacto<span class="nav-link-underline"></span></a>
+
+            <a href="index.html#agenda-online" class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#c59d5f] px-5 py-2.5 text-sm font-bold text-[#111111] transition-colors duration-300 hover:bg-[#e0bb7e]">Reservar</a>
+          </div>
+
+          <div class="lg:hidden flex items-center">
+            <button id="mobile-menu-button" type="button" class="p-2 -mr-2 text-white hover:text-[#c59d5f] transition-colors duration-300 rounded-lg cursor-pointer" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto bg-[#111111] border-t border-white/10">
+        <div class="px-3 pt-3 pb-5 space-y-1">
+          <a href="index.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Inicio</a>
+          <a href="curso.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Curso</a>
+          <a href="tienda.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Tienda</a>
+          <a href="servicios.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Servicios</a>
+          <a href="barbero-a-domicilio.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Solicitar barbero a domicilio</a>
+          <a href="contacto.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Contacto</a>
+          <a href="index.html#agenda-online" class="block px-3 py-2.5 text-base font-bold text-[#111111] bg-[#c59d5f] rounded-lg hover:bg-[#e0bb7e] transition-all duration-300">Reservar</a>
+
+          <div class="pt-3 border-t border-white/10 space-y-2">
+            <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-[#25d366]/25 bg-[#25d366]/10 px-3.5 py-3 text-white transition-all duration-300 hover:bg-[#25d366]/20"><span class="font-semibold text-sm">WhatsApp general</span><span class="text-xs text-white/70">Consultas y ayuda</span></a>
+            <h3 class="text-[#c59d5f] font-semibold pt-2 mb-1 text-xs uppercase tracking-[0.2em] px-1">Sucursales</h3>
+            <a href="https://wa.me/56930192051" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Bellas Artes</span></a>
+            <a href="https://wa.me/56933057683" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Providencia</span></a>
+            <a href="https://wa.me/56992660737" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Ñuñoa</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== SERVICIOS ===== -->
+  <main id="main-content" class="min-h-screen overflow-x-hidden bg-[#0b0a08] text-white pt-16">
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden px-4 pb-16 pt-20 sm:px-6 md:pb-24 md:pt-28 lg:px-8">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(197,157,95,0.18),transparent_38%)]"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Nuestro oficio</p>
+        <h1 class="mt-4 max-w-4xl font-display text-[clamp(3rem,9vw,7rem)] font-black uppercase leading-[0.9] tracking-tight">Corte, barba y estilo.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/70">Cortes modernos, afeitado clásico y visagismo personalizado. Elige tu servicio y al profesional que te va a atender.</p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="index.html#agenda-online" class="inline-flex min-h-14 items-center justify-center rounded-xl bg-[#c59d5f] px-7 py-4 text-base font-bold text-[#111111] transition-colors hover:bg-[#e0bb7e]">Agendar mi hora</a>
+          <a href="#precios" class="inline-flex min-h-14 items-center justify-center rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-base font-bold text-white transition-colors hover:bg-white hover:text-[#0b0a08]">Ver precios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs de servicios -->
+    <section id="servicios" class="px-4 py-16 sm:px-6 md:py-20 lg:px-8" data-tabs>
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-8 flex flex-wrap gap-3" role="tablist" aria-label="Servicios del Club">
+          <button type="button" data-tab="corte" role="tab" aria-selected="true" class="service-tab rounded-full border px-6 py-3 text-sm font-bold">Corte de cabello</button>
+          <button type="button" data-tab="barba" role="tab" aria-selected="false" class="service-tab rounded-full border px-6 py-3 text-sm font-bold">Barba</button>
+          <button type="button" data-tab="afeitado" role="tab" aria-selected="false" class="service-tab rounded-full border px-6 py-3 text-sm font-bold">Afeitado clásico</button>
+          <button type="button" data-tab="visagismo" role="tab" aria-selected="false" class="service-tab rounded-full border px-6 py-3 text-sm font-bold">Visagismo</button>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[1fr_320px]">
+          <div class="min-w-0">
+            <!-- Panel Corte -->
+            <div id="corte" data-tab-panel role="tabpanel" class="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
+              <h2 class="text-3xl font-black">Corte de cabello</h2>
+              <p class="mt-4 text-base leading-8 text-white/68">Cortes clásicos, modernos y degradados (fades) ejecutados con precisión. Cada corte parte de una lectura del tipo de cabello y del estilo que buscas.</p>
+              <ul class="mt-6 space-y-3 text-sm leading-6 text-white/70">
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Consulta de estilo y asesoría previa.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Lavado y preparación del cabello.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Terminaciones con producto y peinado.</li>
+              </ul>
+              <p class="mt-7 text-2xl font-black text-accent">$24.990</p>
+            </div>
+            <!-- Panel Barba -->
+            <div id="barba" data-tab-panel role="tabpanel" class="hidden rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
+              <h2 class="text-3xl font-black">Barba</h2>
+              <p class="mt-4 text-base leading-8 text-white/68">Diseño, perfilado y cuidado de la barba. Adaptamos el contorno a la forma de tu rostro para un resultado equilibrado.</p>
+              <ul class="mt-6 space-y-3 text-sm leading-6 text-white/70">
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Perfilado con navaja.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Ajuste de volumen y contornos.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Hidratación y producto para barba.</li>
+              </ul>
+              <p class="mt-7 text-2xl font-black text-accent">$22.990</p>
+            </div>
+            <!-- Panel Afeitado -->
+            <div id="afeitado" data-tab-panel role="tabpanel" class="hidden rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
+              <h2 class="text-3xl font-black">Afeitado clásico</h2>
+              <p class="mt-4 text-base leading-8 text-white/68">Afeitado tradicional con navaja y toallas calientes, respetando la piel y cerrando con productos premium.</p>
+              <ul class="mt-6 space-y-3 text-sm leading-6 text-white/70">
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Toallas calientes para preparar la piel.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Afeitado con navaja de acero.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Bálsamo y cuidado post-afeitado.</li>
+              </ul>
+              <p class="mt-7 text-2xl font-black text-accent">$24.990</p>
+            </div>
+            <!-- Panel Visagismo -->
+            <div id="visagismo" data-tab-panel role="tabpanel" class="hidden rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
+              <h2 class="text-3xl font-black">Visagismo</h2>
+              <p class="mt-4 text-base leading-8 text-white/68">Análisis de tu rostro, tipo de cabello y estilo para recomendarte el corte que mejor te favorece. Asesoría de imagen antes de decidir.</p>
+              <ul class="mt-6 space-y-3 text-sm leading-6 text-white/70">
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Estudio de la forma del rostro.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Recomendación de corte y barba.</li>
+                <li class="flex gap-3"><span class="text-accent font-bold">✓</span> Guía de estilo personalizada.</li>
+              </ul>
+              <p class="mt-7 text-2xl font-black text-accent">Incluido en tu visita</p>
+            </div>
+          </div>
+
+          <aside class="rounded-3xl border border-accent/25 bg-[#17120d] p-6">
+            <h3 class="text-lg font-black text-accent">Combos destacados</h3>
+            <ul class="mt-5 space-y-4 text-sm">
+              <li class="flex items-center justify-between border-b border-white/10 pb-4"><span class="text-white/80">Corte + barba</span><span class="font-black text-white">$38.990</span></li>
+              <li class="flex items-center justify-between border-b border-white/10 pb-4"><span class="text-white/80">Corte + afeitado</span><span class="font-black text-white">$44.990</span></li>
+              <li class="flex items-center justify-between"><span class="text-white/80">Pack grupo (a domicilio)</span><span class="font-black text-white">A coordinar</span></li>
+            </ul>
+            <a href="index.html#agenda-online" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#c59d5f] px-5 py-3.5 text-sm font-bold text-[#111111] transition-colors hover:bg-[#e0bb7e]">Agendar ahora</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Precios -->
+    <section id="precios" class="border-y border-white/10 bg-[#15110c] px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Lista de precios</p>
+        <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Servicios y valores.</h2>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="border border-white/10 bg-white/[0.04] p-6"><h3 class="text-xl font-black">Corte de pelo</h3><p class="mt-2 text-sm text-white/60">Clásico, moderno o fade.</p><p class="mt-4 text-2xl font-black text-accent">$24.990</p></article>
+          <article class="border border-white/10 bg-white/[0.04] p-6"><h3 class="text-xl font-black">Barba</h3><p class="mt-2 text-sm text-white/60">Diseño y perfilado con navaja.</p><p class="mt-4 text-2xl font-black text-accent">$22.990</p></article>
+          <article class="border border-white/10 bg-white/[0.04] p-6"><h3 class="text-xl font-black">Afeitado clásico</h3><p class="mt-2 text-sm text-white/60">Navaja y toallas calientes.</p><p class="mt-4 text-2xl font-black text-accent">$24.990</p></article>
+          <article class="border border-white/10 bg-white/[0.04] p-6"><h3 class="text-xl font-black">Corte + barba</h3><p class="mt-2 text-sm text-white/60">El combo más pedido.</p><p class="mt-4 text-2xl font-black text-accent">$38.990</p></article>
+          <article class="border border-white/10 bg-white/[0.04] p-6"><h3 class="text-xl font-black">Corte + afeitado</h3><p class="mt-2 text-sm text-white/60">Estilo y piel impecable.</p><p class="mt-4 text-2xl font-black text-accent">$44.990</p></article>
+          <article class="border border-white/10 bg-white/[0.04] p-6"><h3 class="text-xl font-black">Visagismo</h3><p class="mt-2 text-sm text-white/60">Asesoría de imagen.</p><p class="mt-4 text-2xl font-black text-accent">Incluido</p></article>
+        </div>
+        <p class="mt-6 text-sm text-white/50">Precios referenciales. Pago en el local. El valor final se confirma al agendar.</p>
+      </div>
+    </section>
+
+    <!-- Carrusel de testimonios -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-accent">Testimonios</p>
+        <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Lo que dicen del Club.</h2>
+
+        <div class="mt-10 relative" data-carousel>
+          <div class="overflow-hidden">
+            <div data-slide class="px-2">
+              <p class="text-xl leading-9 text-white/80 md:text-2xl md:leading-10">"El mejor corte que me he hecho. El barbero entendió exactamente lo que quería y el resultado quedó impecable."</p>
+              <p class="mt-6 text-sm font-bold text-accent">— Matías, Providencia</p>
+            </div>
+            <div data-slide class="hidden px-2">
+              <p class="text-xl leading-9 text-white/80 md:text-2xl md:leading-10">"Agendé online en dos minutos y me atendieron puntual. La atención y el detalle marcan la diferencia."</p>
+              <p class="mt-6 text-sm font-bold text-accent">— Ignacio, Bellas Artes</p>
+            </div>
+            <div data-slide class="hidden px-2">
+              <p class="text-xl leading-9 text-white/80 md:text-2xl md:leading-10">"La barba quedó perfecta. Se nota el criterio y la experiencia de los profesionales del Club."</p>
+              <p class="mt-6 text-sm font-bold text-accent">— Felipe, Ñuñoa</p>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center justify-center gap-2">
+            <button type="button" data-carousel-prev aria-label="Testimonio anterior" class="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition-colors hover:bg-white hover:text-black"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
+            <button type="button" data-dot class="carousel-dot" aria-label="Ir al testimonio 1"></button>
+            <button type="button" data-dot class="carousel-dot" aria-label="Ir al testimonio 2"></button>
+            <button type="button" data-dot class="carousel-dot" aria-label="Ir al testimonio 3"></button>
+            <button type="button" data-carousel-next aria-label="Testimonio siguiente" class="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition-colors hover:bg-white hover:text-black"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (acordeón) -->
+    <section class="border-y border-white/10 bg-[#f3eee5] px-4 py-16 text-[#15110c] sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-[#8c6431]">Preguntas frecuentes</p>
+        <h2 class="mt-4 font-display text-4xl font-black leading-tight md:text-5xl">Resolvemos tus dudas.</h2>
+
+        <div class="mt-10 divide-y divide-[#15110c]/15 border-y border-[#15110c]/15">
+          <details class="faq-details group py-5" open>
+            <summary class="flex items-center justify-between gap-4 text-lg font-black">
+              ¿Necesito reservar hora?
+              <svg class="faq-chevron h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <p class="mt-4 text-base leading-7 text-[#5f564a]">Sí. Para asegurar tu atención y elegir profesional, agenda online tu hora. También puedes escribir por WhatsApp para consultas.</p>
+          </details>
+          <details class="faq-details group py-5">
+            <summary class="flex items-center justify-between gap-4 text-lg font-black">
+              ¿Puedo elegir a mi barbero?
+              <svg class="faq-chevron h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <p class="mt-4 text-base leading-7 text-[#5f564a]">Sí. En la agenda online puedes elegir el profesional y la sucursal que más te acomoden.</p>
+          </details>
+          <details class="faq-details group py-5">
+            <summary class="flex items-center justify-between gap-4 text-lg font-black">
+              ¿Qué métodos de pago aceptan?
+              <svg class="faq-chevron h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <p class="mt-4 text-base leading-7 text-[#5f564a]">El pago se realiza en el local. Aceptamos efectivo y tarjetas, según la sucursal.</p>
+          </details>
+          <details class="faq-details group py-5">
+            <summary class="flex items-center justify-between gap-4 text-lg font-black">
+              ¿Hacen cortes a domicilio?
+              <svg class="faq-chevron h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <p class="mt-4 text-base leading-7 text-[#5f564a]">Sí, en Providencia, Santiago Centro y Ñuñoa. Consulta la sección "Solicitar barbero a domicilio".</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto max-w-5xl rounded-3xl border border-accent/25 bg-[#17120d] p-8 text-center md:p-12">
+        <h2 class="font-display text-4xl font-black leading-tight md:text-5xl">¿Listo para tu próximo corte?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-8 text-white/70">Agenda online en pocos pasos y encuentra tu horario disponible al instante.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="index.html#agenda-online" class="inline-flex min-h-14 items-center justify-center rounded-xl bg-[#c59d5f] px-7 py-4 text-base font-bold text-[#111111] transition-colors hover:bg-[#e0bb7e]">Agendar mi hora</a>
+          <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-14 items-center justify-center rounded-xl border border-[#25d366]/40 bg-[#25d366]/10 px-7 py-4 text-base font-bold text-white transition-colors hover:bg-[#25d366]/20">WhatsApp general</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer relative border-t border-white/5 py-10">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="mx-auto px-gutter">
+      <div class="mx-auto max-w-5xl flex flex-col items-center text-center gap-6">
+        <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="Enlaces del sitio">
+          <a href="index.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Inicio</a>
+          <a href="curso.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Curso</a>
+          <a href="tienda.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Tienda</a>
+          <a href="servicios.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Servicios</a>
+          <a href="barbero-a-domicilio.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Solicitar barbero a domicilio</a>
+          <a href="contacto.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Contacto</a>
+        </nav>
+        <div class="flex items-center gap-5">
+          <a href="https://www.instagram.com/clubdelabarba" target="_blank" rel="noopener noreferrer" class="footer-link text-white/40 hover:text-[#c59d5f]" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+          <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="footer-link text-white/40 hover:text-whatsapp" aria-label="WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+        </div>
+        <p class="text-white/30 text-xs">© 2026 Club de la Barba. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Escribir por WhatsApp al +56 9 7206 3315">
+    <span class="floating-whatsapp__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+  </a>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

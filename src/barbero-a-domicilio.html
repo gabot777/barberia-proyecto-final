@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbero a domicilio | Club de la Barba</title>
+  <link rel="icon" type="image/x-icon" href="./assets/image/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="club-editorial bg-secondary text-primary font-sans">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-azul text-white px-4 py-2 rounded-md z-50">Saltar al contenido principal</a>
+
+  <!-- ===== HEADER / NAVEGACIÓN ===== -->
+  <header>
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#111111f5] border-b border-white/10 backdrop-blur-md">
+      <div class="nav-glow-line"></div>
+      <div class="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-7">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="flex items-center nav-logo-link" aria-label="Inicio Club de la Barba">
+            <img src="./assets/image/logo.png" alt="Club de la Barba" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300">
+          </a>
+
+          <div class="hidden lg:flex min-w-0 flex-1 items-center justify-end gap-5 xl:gap-6">
+            <a href="index.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Inicio<span class="nav-link-underline"></span></a>
+            <a href="curso.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Curso<span class="nav-link-underline"></span></a>
+            <a href="tienda.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Tienda<span class="nav-link-underline"></span></a>
+
+            <div class="relative group">
+              <button type="button" class="nav-link flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982] cursor-pointer">
+                Servicios
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute right-0 mt-2 w-64 nav-dropdown opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0">
+                <div class="p-2 space-y-1">
+                  <a href="servicios.html" class="block rounded-lg px-3 py-2.5 text-sm font-semibold text-[#c59d5f] hover:bg-white/5 transition-all duration-200">Todos los servicios</a>
+                  <a href="servicios.html#corte" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Corte de cabello</a>
+                  <a href="servicios.html#barba" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Barba</a>
+                  <a href="servicios.html#afeitado" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Afeitado clásico</a>
+                  <a href="servicios.html#visagismo" class="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:text-[#dcb982] hover:bg-white/5 transition-all duration-200">Visagismo</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="barbero-a-domicilio.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Solicitar barbero a domicilio<span class="nav-link-underline"></span></a>
+            <a href="contacto.html" class="nav-link relative whitespace-nowrap text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:text-[#dcb982]">Contacto<span class="nav-link-underline"></span></a>
+
+            <a href="index.html#agenda-online" class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#c59d5f] px-5 py-2.5 text-sm font-bold text-[#111111] transition-colors duration-300 hover:bg-[#e0bb7e]">Reservar</a>
+          </div>
+
+          <div class="lg:hidden flex items-center">
+            <button id="mobile-menu-button" type="button" class="p-2 -mr-2 text-white hover:text-[#c59d5f] transition-colors duration-300 rounded-lg cursor-pointer" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto bg-[#111111] border-t border-white/10">
+        <div class="px-3 pt-3 pb-5 space-y-1">
+          <a href="index.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Inicio</a>
+          <a href="curso.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Curso</a>
+          <a href="tienda.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Tienda</a>
+          <a href="servicios.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Servicios</a>
+          <a href="barbero-a-domicilio.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Solicitar barbero a domicilio</a>
+          <a href="contacto.html" class="block px-3 py-2.5 text-base font-medium text-white/90 hover:text-[#c59d5f] hover:bg-[#c59d5f]/10 rounded-lg transition-all duration-300">Contacto</a>
+          <a href="index.html#agenda-online" class="block px-3 py-2.5 text-base font-bold text-[#111111] bg-[#c59d5f] rounded-lg hover:bg-[#e0bb7e] transition-all duration-300">Reservar</a>
+
+          <div class="pt-3 border-t border-white/10 space-y-2">
+            <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-[#25d366]/25 bg-[#25d366]/10 px-3.5 py-3 text-white transition-all duration-300 hover:bg-[#25d366]/20"><span class="font-semibold text-sm">WhatsApp general</span><span class="text-xs text-white/70">Consultas y ayuda</span></a>
+            <h3 class="text-[#c59d5f] font-semibold pt-2 mb-1 text-xs uppercase tracking-[0.2em] px-1">Sucursales</h3>
+            <a href="https://wa.me/56930192051" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Bellas Artes</span></a>
+            <a href="https://wa.me/56933057683" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Providencia</span></a>
+            <a href="https://wa.me/56992660737" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/80 hover:text-[#25d366] rounded-lg px-3 py-2.5 transition-all duration-300"><span class="text-sm">Ñuñoa</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== BARBERO A DOMICILIO ===== -->
+  <main id="main-content" class="min-h-screen bg-[#f3eee5] pt-16 text-[#171412]">
+
+    <!-- Hero -->
+    <section class="bg-[#171412] px-4 py-14 text-white md:py-20">
+      <div class="mx-auto max-w-6xl">
+        <p class="text-xs font-black uppercase tracking-[0.2em] text-[#d5ad68]">El Club, donde estés</p>
+        <h1 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">Barbero a domicilio</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-7 text-white/80">Cuéntanos qué necesitas. Nuestro equipo te contactará para coordinar la atención, sujeta a disponibilidad.</p>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-[#d5ad68]">Exclusivo para Providencia, Santiago Centro y Ñuñoa. Precio especial para grupos, a coordinar.</p>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section class="mx-auto grid max-w-6xl gap-8 px-4 py-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <form data-simulate-form="home-service-success" class="min-w-0 rounded-3xl border border-black/10 bg-white p-5 md:p-8">
+        <h2 class="text-2xl font-black">Solicita una coordinación</h2>
+        <p class="mt-3 text-sm leading-6 text-black/70">Enviar esta solicitud no confirma una atención ni reserva una hora. Los campos marcados con * son obligatorios.</p>
+
+        <div class="mt-6 grid gap-5 sm:grid-cols-2">
+          <label class="block text-sm font-semibold text-[#171412]">Nombre completo *
+            <input name="name" required autocomplete="name" maxlength="120" class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+          <label class="block text-sm font-semibold text-[#171412]">Correo electrónico *
+            <input name="email" type="email" required autocomplete="email" maxlength="160" class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+          <label class="block text-sm font-semibold text-[#171412]">Teléfono de contacto *
+            <input name="phone" type="tel" required autocomplete="tel" placeholder="+56 9 1234 5678" class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+          <label class="block text-sm font-semibold text-[#171412]">Cantidad de personas *
+            <input name="people" type="number" min="1" max="1000" value="1" required class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+        </div>
+
+        <fieldset class="mt-6 min-w-0">
+          <legend class="text-sm font-bold text-[#171412]">Servicios requeridos *</legend>
+          <p class="mt-1 text-sm text-black/60">Puedes elegir más de uno. Los precios son por persona.</p>
+          <div class="mt-3 grid gap-3 sm:grid-cols-3">
+            <label class="flex cursor-pointer items-center gap-3 rounded-xl border border-[#a89c8c] px-4 py-3 text-sm font-semibold"><input type="checkbox" value="corte" class="h-5 w-5 accent-[#171412]"> Corte de pelo · $24.990</label>
+            <label class="flex cursor-pointer items-center gap-3 rounded-xl border border-[#a89c8c] px-4 py-3 text-sm font-semibold"><input type="checkbox" value="corte-barba" class="h-5 w-5 accent-[#171412]"> Corte + barba · $38.990</label>
+            <label class="flex cursor-pointer items-center gap-3 rounded-xl border border-[#a89c8c] px-4 py-3 text-sm font-semibold"><input type="checkbox" value="barba" class="h-5 w-5 accent-[#171412]"> Barba · $22.990</label>
+          </div>
+        </fieldset>
+
+        <div class="mt-6 grid gap-5 sm:grid-cols-2">
+          <label class="block text-sm font-semibold text-[#171412]">Comuna *
+            <select name="commune" required class="mt-2 block w-full rounded-xl border border-[#a89c8c] bg-white px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+              <option value="">Selecciona tu comuna</option>
+              <option>Providencia</option>
+              <option>Santiago Centro</option>
+              <option>Ñuñoa</option>
+            </select>
+          </label>
+          <label class="block text-sm font-semibold text-[#171412]">Dirección *
+            <input name="address" required autocomplete="address-line1" maxlength="240" class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+          <label class="block text-sm font-semibold text-[#171412]">Fecha tentativa *
+            <input name="date" type="date" required class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+          <label class="block text-sm font-semibold text-[#171412]">Horario tentativo *
+            <input name="time" type="time" required class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none">
+          </label>
+        </div>
+
+        <label class="mt-6 block text-sm font-semibold text-[#171412]">Observaciones (opcional)
+          <textarea name="observations" rows="4" maxlength="2000" placeholder="Cuéntanos cualquier detalle adicional…" class="mt-2 block w-full rounded-xl border border-[#a89c8c] px-4 py-3 text-[#171412] focus:border-[#8a642f] focus:outline-none"></textarea>
+        </label>
+
+        <label class="mt-5 flex items-start gap-3 rounded-xl bg-[#f6f1e8] p-4 text-sm leading-6">
+          <input name="consent" type="checkbox" required class="mt-1 h-5 w-5 shrink-0 accent-[#171412]">
+          <span>Acepto que Club de la Barba almacene mis datos de contacto y dirección para gestionar esta solicitud y contactarme. *</span>
+        </label>
+
+        <button type="submit" class="mt-6 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-[#171412] px-6 py-4 text-base font-black text-white transition-colors hover:bg-[#342c23]">Enviar solicitud</button>
+      </form>
+
+      <aside class="space-y-4">
+        <div class="rounded-3xl bg-[#c59d5f] p-6">
+          <h2 class="text-xl font-black">Antes de enviar</h2>
+          <ul class="mt-4 list-disc space-y-4 pl-5 text-sm leading-6">
+            <li>Cobertura exclusiva: Providencia, Santiago Centro y Ñuñoa.</li>
+            <li>Los precios del selector son por persona.</li>
+            <li>Precio especial para grupos, a coordinar.</li>
+          </ul>
+        </div>
+        <p class="rounded-3xl border border-black/10 bg-white p-6 text-sm leading-6">Acordaremos contigo disponibilidad, servicios, precio final, fecha, horario y barbero. No se realizan cobros al enviar este formulario.</p>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer relative border-t border-white/5 py-10">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="mx-auto px-gutter">
+      <div class="mx-auto max-w-5xl flex flex-col items-center text-center gap-6">
+        <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="Enlaces del sitio">
+          <a href="index.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Inicio</a>
+          <a href="curso.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Curso</a>
+          <a href="tienda.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Tienda</a>
+          <a href="servicios.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Servicios</a>
+          <a href="barbero-a-domicilio.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Solicitar barbero a domicilio</a>
+          <a href="contacto.html" class="footer-link text-white/55 hover:text-[#c59d5f]">Contacto</a>
+        </nav>
+        <p class="text-white/30 text-xs">© 2026 Club de la Barba. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de confirmación -->
+  <div id="home-service-success" data-modal class="hidden fixed inset-0 z-[60] items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+    <div class="w-full max-w-md rounded-3xl border border-white/10 bg-[#17120d] p-8 text-center text-white">
+      <div class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#c59d5f] text-2xl font-black text-[#111111]">✓</div>
+      <p class="mt-5 text-xs font-black uppercase tracking-[0.2em] text-accent">Solicitud enviada</p>
+      <h2 class="mt-2 text-2xl font-black">¡Recibimos tu solicitud!</h2>
+      <p class="mt-3 text-sm leading-6 text-white/70">Nuestro equipo te contactará para coordinar disponibilidad, servicios, fecha y precio final. No se realizan cobros por enviar este formulario.</p>
+      <button type="button" data-modal-close class="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#c59d5f] px-6 py-3 text-sm font-bold text-[#111111] transition-colors hover:bg-[#e0bb7e]">Cerrar</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/56972063315" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Escribir por WhatsApp al +56 9 7206 3315">
+    <span class="floating-whatsapp__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+  </a>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

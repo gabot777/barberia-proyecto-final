@@ -1,0 +1,17 @@
+{
+  "name": "clublabarba.html",
+  "version": "1.0.0",
+  "description": "Sitio web Club La Barba desarrollado en HTML y Tailwind CSS v4",
+  "scripts": {
+    "watch": "tailwindcss -i ./input/input.css -o ./src/assets/css/style.css --watch",
+    "build": "tailwindcss -i ./input/input.css -o ./src/assets/css/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
